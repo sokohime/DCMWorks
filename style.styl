@@ -1,4 +1,10 @@
 screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (huge 3840)
+browser-Vendors = -moz- -webkit- -o- -ms-
+
+border-radius(value)
+	for item in browser-Vendors
+		{item}border-radius: value
+	border-radius: value
 
 -get(value, parameter, property = null)
 	if parameter is exst
@@ -27,3 +33,10 @@ screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (
 		@media screen and (min-width: value)
 			{block}
 
+-grid()
+	
+
+.viewport
+	-style(100%, width)
+	-style(100%, height)
+		
