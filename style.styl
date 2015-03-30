@@ -1,0 +1,16 @@
+screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (huge 3840)
+
+-get(parameter, value, property = null)
+	if parameter is exst
+		if value not null
+			return true
+	if parameter is type
+		return typeof(value)
+	if parameter is calc
+		return value
+
+-style(value, parameter, property = null)
+	if -get(exst, property)
+		{parameter}-{property}: value
+	else
+		{parameter}: value
