@@ -1,6 +1,6 @@
 screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (huge 3840)
 
--get(parameter, value, property = null)
+-get(value, parameter, property = null)
 	if parameter is exst
 		if value not null
 			return true
@@ -10,7 +10,20 @@ screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (
 		return value
 
 -style(value, parameter, property = null)
-	if -get(exst, property)
+	if -get(property, exst)
 		{parameter}-{property}: value
 	else
 		{parameter}: value
+
+-query(value, property = null, parameter = null)
+	if -get(parameter, exst)
+		if -get(property, exst)
+			@media parameter and ({property}: value)
+				{block}
+		else
+			@media screen and ({property}: value)
+				{block}
+	else
+		@media screen and (min-width: value)
+			{block}
+
