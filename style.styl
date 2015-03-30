@@ -1,10 +1,13 @@
-screen-Size = (mini 480) (small 1024) (average 1440) (large 1920) (jumbo 2560) (huge 3840)
+screen-Size = (mini 400) (small 1024) (average 1296) (large 1936) (jumbo 2704) (huge 3600)
 browser-Vendors = -moz- -webkit- -o- -ms-
 
 border-radius(value)
 	for item in browser-Vendors
 		{item}border-radius: value
 	border-radius: value
+
+-min-height(value)
+	-style(value, min-height)
 
 -get(value, parameter, property = null)
 	if parameter is exst
@@ -14,6 +17,8 @@ border-radius(value)
 		return typeof(value)
 	if parameter is calc
 		return value
+	if parameter is sqrt
+		return math(value, 'sqrt')
 
 -style(value, parameter, property = null)
 	if -get(property, exst)
@@ -34,9 +39,59 @@ border-radius(value)
 			{block}
 
 -grid()
-	
 
-.viewport
+
+$defaults
+	-min-height(1px)
+$clearfix	
+
+$viewer
 	-style(100%, width)
 	-style(100%, height)
-		
+	-style(rgb(227,227,227), background, color)
+$header
+	-style(rgb(150,150,150), background, color)
+	-style(150%, font-size)
+$navbar
+	-style(rgb(36,36,36), background, color)
+	-style(rgb(150,150,150), color)
+	-style(100%, font-size)
+$subnav
+	-style(rgb(150,150,150), background, color)
+	-style(90%, font-size)
+$content
+	-style(80%, font-size)
+$footer
+	-style(rgb(36,36,36), background, color)
+	-style(rgb(150,150,150), color)
+	-style(80%, font-size)
+
+.viewport
+	@extends $viewer
+	for item in (0..-1+length(screen-Size))
+		+-query(values(screen-Size)[item] px)
+			.header
+				@extends $header
+				.bodytext
+					@extends $defaults
+					-style(100% - -get(values(screen-Size)[item], sqrt), width)
+			.navbar
+				@extends $navbar
+				.bodytext
+					@extends $defaults
+					-style(100% - -get(values(screen-Size)[item], sqrt), width)
+			.subnav
+				@extends $subnav
+				.bodytext
+					@extends $defaults
+					-style(100% - -get(values(screen-Size)[item], sqrt), width)
+			.content
+				@extends $content
+				.bodytext
+					@extends $defaults
+					-style(100% - -get(values(screen-Size)[item], sqrt), width)
+			.footer
+				@extends $footer
+				.bodytext
+					@extends $defaults
+					-style(100% - -get(values(screen-Size)[item], sqrt), width)

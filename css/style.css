@@ -1,4 +1,135 @@
+.viewport .header .bodytext,
+.viewport .navbar .bodytext,
+.viewport .subnav .bodytext,
+.viewport .content .bodytext,
+.viewport .footer .bodytext {
+  min-height: 1px;
+}
 .viewport {
   width: 100%;
   height: 100%;
+  background-color: #e3e3e3;
+}
+.viewport .header {
+  background-color: #969696;
+  font-size: 150%;
+}
+.viewport .navbar {
+  background-color: #242424;
+  color: #969696;
+  font-size: 100%;
+}
+.viewport .subnav {
+  background-color: #969696;
+  font-size: 90%;
+}
+.viewport .content {
+  font-size: 80%;
+}
+.viewport .footer {
+  background-color: #242424;
+  color: #969696;
+  font-size: 80%;
+}
+@media screen and (min-width: 400px) {
+  .viewport .header .bodytext {
+    width: 80%;
+  }
+  .viewport .navbar .bodytext {
+    width: 80%;
+  }
+  .viewport .subnav .bodytext {
+    width: 80%;
+  }
+  .viewport .content .bodytext {
+    width: 80%;
+  }
+  .viewport .footer .bodytext {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .viewport .header .bodytext {
+    width: 68%;
+  }
+  .viewport .navbar .bodytext {
+    width: 68%;
+  }
+  .viewport .subnav .bodytext {
+    width: 68%;
+  }
+  .viewport .content .bodytext {
+    width: 68%;
+  }
+  .viewport .footer .bodytext {
+    width: 68%;
+  }
+}
+@media screen and (min-width: 1296px) {
+  .viewport .header .bodytext {
+    width: 64%;
+  }
+  .viewport .navbar .bodytext {
+    width: 64%;
+  }
+  .viewport .subnav .bodytext {
+    width: 64%;
+  }
+  .viewport .content .bodytext {
+    width: 64%;
+  }
+  .viewport .footer .bodytext {
+    width: 64%;
+  }
+}
+@media screen and (min-width: 1936px) {
+  .viewport .header .bodytext {
+    width: 56%;
+  }
+  .viewport .navbar .bodytext {
+    width: 56%;
+  }
+  .viewport .subnav .bodytext {
+    width: 56%;
+  }
+  .viewport .content .bodytext {
+    width: 56%;
+  }
+  .viewport .footer .bodytext {
+    width: 56%;
+  }
+}
+@media screen and (min-width: 2704px) {
+  .viewport .header .bodytext {
+    width: 48%;
+  }
+  .viewport .navbar .bodytext {
+    width: 48%;
+  }
+  .viewport .subnav .bodytext {
+    width: 48%;
+  }
+  .viewport .content .bodytext {
+    width: 48%;
+  }
+  .viewport .footer .bodytext {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 3600px) {
+  .viewport .header .bodytext {
+    width: 40%;
+  }
+  .viewport .navbar .bodytext {
+    width: 40%;
+  }
+  .viewport .subnav .bodytext {
+    width: 40%;
+  }
+  .viewport .content .bodytext {
+    width: 40%;
+  }
+  .viewport .footer .bodytext {
+    width: 40%;
+  }
 }
